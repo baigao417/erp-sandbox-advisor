@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "company": {
+    "opening_cash": "30",
+    "equity": "60",
+    "markets": ["market_alpha"],
+    "products": ["product_a"],
+    "certifications": ["cert_demo"]
+  },
+  "cash_events": [
+    {"label": "period_1_purchase", "inflow": "0", "outflow": "12"},
+    {"label": "period_2_collection", "inflow": "20", "outflow": "8"}
+  ],
+  "inventory": {"product_a": 5, "product_b": 2},
+  "orders": [
+    {
+      "id": "order_alpha",
+      "market": "market_alpha",
+      "product": "product_a",
+      "quantity": 3,
+      "unit_price": "9",
+      "unit_cost": "4",
+      "allocated_cost": "2",
+      "required_certifications": ["cert_demo"],
+      "delivery_period": 2,
+      "ready_period": 2,
+      "available_units": 3
+    },
+    {
+      "id": "order_beta",
+      "market": "market_beta",
+      "product": "product_b",
+      "quantity": 2,
+      "unit_price": "12",
+      "unit_cost": "3",
+      "allocated_cost": "1",
+      "required_certifications": [],
+      "delivery_period": 1,
+      "ready_period": 2,
+      "available_units": 1
+    }
+  ],
+  "ranking": {"advertising": "8", "equity_weight": "0.5", "advertising_weight": "0.5"},
+  "inventory_rules": {
+    "per_product_limit": 4,
+    "total_limit": 10,
+    "penalty_per_unit": "2",
+    "overlap": "max",
+    "annual_bands": [{"above": 2, "fee": "1"}, {"above": 7, "fee": "3"}]
+  }
+}
